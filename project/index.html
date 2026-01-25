@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=assignment,attach_money,check"
+    />
+    <!-- icon -->
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aryus - Joki Flow</title>
+  </head>
+  <body class="h-full bg-slate-200">
+    <!-- navbar -->
+    <nav
+      class="w-full flex flex-row bg-slate-100 p-2.5 justify-between h-16 items-center px-5 shadow"
+    >
+      <div class="text-xl font-bold text-indigo-500"><h1>JokiFlow.</h1></div>
+      <div class="text-base font-semibold text-slate-500"><h4>Admin</h4></div>
+    </nav>
+    <!-- dashboard start -->
+    <div class="w-full h-full p-5 py-7">
+      <div class="dashboard_header font-semibold text-slate-500 text-lg">
+        Dashboard Overview
+      </div>
+      <!-- container dashboard item -->
+      <div class="dashboard-item flex flex-col py-5 gap-2.5">
+        <!-- dashboard item estimasi -->
+        <div
+          class="estimated w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
+        >
+          <!-- estimasi logo -->
+          <div
+            class="logo p-3 bg-indigo-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+          >
+            <span class="material-symbols-outlined"> attach_money </span>
+          </div>
+          <!-- estimasi logo end -->
+          <!-- estimasi text -->
+          <div class="info px-3 text-sm font-medium text-slate-800">
+            <p>Estimasi Pendapatan (Pending)</p>
+            <p>Rp. <span id="estimasi">xxx</span></p>
+          </div>
+          <!-- estimasi text end -->
+        </div>
+        <!-- dashboard item estimasi end -->
+        <!-- dashboard item income -->
+        <div
+          class="income w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
+        >
+          <!-- income logo -->
+          <div
+            class="logo p-3 bg-emerald-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+          >
+            <span class="material-symbols-outlined"> check </span>
+          </div>
+          <!-- income logo end -->
+          <!-- income text -->
+          <div class="info px-3 text-sm font-medium text-slate-800">
+            <p>Total Pemasukan</p>
+            <p>Rp. <span id="pemasukan">xxx</span></p>
+          </div>
+          <!-- income text end -->
+          <!-- dashboard item income end -->
+        </div>
+        <div
+          class="order w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
+        >
+          <!-- order logo -->
+          <div
+            class="logo p-3 bg-amber-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+          >
+            <span class="material-symbols-outlined"> assignment </span>
+          </div>
+          <!-- order logo end -->
+          <!-- order text -->
+          <div class="info px-3 text-sm font-medium text-slate-800">
+            <p>Total Pesanan Masuk</p>
+            <p><span id="pesanan">xxx</span></p>
+          </div>
+          <!-- order text end -->
+        </div>
+        <!-- container dashboard item end -->
+
+        <!-- container order list -->
+      </div>
+    </div>
+    <!-- dashboard end -->
+  </body>
+</html>
