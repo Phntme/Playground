@@ -4,7 +4,7 @@
     <!-- icon -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=assignment,attach_money,check"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,assignment,attach_money,check,close"
     />
     <!-- icon -->
     <link rel="stylesheet" href="../src/output.css" />
@@ -33,73 +33,182 @@
       <div class="text-xl font-bold text-indigo-500"><h1>JokiFlow.</h1></div>
       <div class="text-base font-semibold text-slate-500"><h4>Admin</h4></div>
     </nav>
-    <!-- dashboard start -->
-    <div class="w-full h-full p-5 py-7">
-      <div class="dashboard_header font-semibold text-slate-500 text-lg">
-        Dashboard Overview
-      </div>
-      <!-- container dashboard item -->
-      <div class="dashboard-item flex flex-col py-5 gap-2.5">
-        <!-- dashboard item estimasi -->
-        <div
-          class="estimated w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
-        >
-          <!-- estimasi logo -->
-          <div
-            class="logo p-3 bg-indigo-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
-          >
-            <span class="material-symbols-outlined"> attach_money </span>
-          </div>
-          <!-- estimasi logo end -->
-          <!-- estimasi text -->
-          <div class="info px-3 text-sm font-medium text-slate-800">
-            <p>Estimasi Pendapatan (Pending)</p>
-            <p>Rp. <span id="estimasi">xxx</span></p>
-          </div>
-          <!-- estimasi text end -->
+    <main class="px-5">
+      <!-- dashboard start -->
+      <div class="w-full h-full py-7">
+        <div class="dashboard_header font-semibold text-slate-500 text-lg">
+          Dashboard Overview
         </div>
-        <!-- dashboard item estimasi end -->
-        <!-- dashboard item income -->
-        <div
-          class="income w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
-        >
-          <!-- income logo -->
+        <!-- container dashboard item -->
+        <div class="dashboard-item flex flex-col py-5 gap-2.5">
+          <!-- dashboard item estimasi -->
           <div
-            class="logo p-3 bg-emerald-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+            class="estimated w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
           >
-            <span class="material-symbols-outlined"> check </span>
+            <!-- estimasi logo -->
+            <div
+              class="logo p-3 bg-indigo-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+            >
+              <span class="material-symbols-outlined"> attach_money </span>
+            </div>
+            <!-- estimasi logo end -->
+            <!-- estimasi text -->
+            <div class="info px-3 text-sm font-medium text-slate-800">
+              <p>Estimasi Pendapatan (Pending)</p>
+              <p>Rp. <span id="estimasi">xxx</span></p>
+            </div>
+            <!-- estimasi text end -->
           </div>
-          <!-- income logo end -->
-          <!-- income text -->
-          <div class="info px-3 text-sm font-medium text-slate-800">
-            <p>Total Pemasukan</p>
-            <p>Rp. <span id="pemasukan">xxx</span></p>
-          </div>
-          <!-- income text end -->
-          <!-- dashboard item income end -->
-        </div>
-        <div
-          class="order w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
-        >
-          <!-- order logo -->
+          <!-- dashboard item estimasi end -->
+          <!-- dashboard item income -->
           <div
-            class="logo p-3 bg-amber-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+            class="income w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
           >
-            <span class="material-symbols-outlined"> assignment </span>
+            <!-- income logo -->
+            <div
+              class="logo p-3 bg-emerald-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+            >
+              <span class="material-symbols-outlined"> check </span>
+            </div>
+            <!-- income logo end -->
+            <!-- income text -->
+            <div class="info px-3 text-sm font-medium text-slate-800">
+              <p>Total Pemasukan</p>
+              <p>Rp. <span id="pemasukan">xxx</span></p>
+            </div>
+            <!-- income text end -->
+            <!-- dashboard item income end -->
           </div>
-          <!-- order logo end -->
-          <!-- order text -->
-          <div class="info px-3 text-sm font-medium text-slate-800">
-            <p>Total Pesanan Masuk</p>
-            <p><span id="pesanan">xxx</span></p>
+          <div
+            class="order w-full rounded-md p-3 bg-slate-100 flex border border-slate-300"
+          >
+            <!-- order logo -->
+            <div
+              class="logo p-3 bg-amber-500 rounded-lg shrink-0 flex justify-center items-center text-slate-50"
+            >
+              <span class="material-symbols-outlined"> assignment </span>
+            </div>
+            <!-- order logo end -->
+            <!-- order text -->
+            <div class="info px-3 text-sm font-medium text-slate-800">
+              <p>Total Pesanan Masuk</p>
+              <p><span id="pesanan">xxx</span></p>
+            </div>
+            <!-- order text end -->
           </div>
-          <!-- order text end -->
-        </div>
-        <!-- container dashboard item end -->
+          <!-- container dashboard item end -->
 
-        <!-- container order list -->
+          <!-- container order list -->
+        </div>
       </div>
-    </div>
-    <!-- dashboard end -->
+      <!-- dashboard end -->
+      <!-- order list -->
+      <div class="rounded-lg overflow-x-auto shadow">
+        <table class="w-full">
+          <thead class="bg-slate-200 text-left">
+            <tr>
+              <th class="px-5 py-3 font-medium text-slate-600 uppercase">
+                Klien
+              </th>
+              <th class="px-5 py-3 font-medium text-slate-600 uppercase">
+                Paket
+              </th>
+              <th class="px-5 py-3 font-medium text-slate-600 uppercase">
+                Harga
+              </th>
+              <th class="px-5 py-3 font-medium text-slate-600 uppercase">
+                Status
+              </th>
+              <th class="px-5 py-3 font-medium text-slate-600 uppercase"></th>
+            </tr>
+          </thead>
+          <tbody class="bg-slate-100 text-slate-800 text-left">
+            <tr>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <div class="font-medium">Fulan</div>
+                <div class="text-slate-500 text-sm">Deadline: 2 Januari</div>
+              </td>
+              <td class="py-3 px-5 whitespace-nowrap">Explore</td>
+              <td class="py-3 px-5 whitespace-nowrap">100.000</td>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <span
+                  class="px-2 py-1 bg-blue-200 text-blue-600 text-xs font-medium rounded-full"
+                  >On Progress</span
+                >
+              </td>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <a href="#" class="mr-5 text-indigo-500">Edit</a>
+                <button class="text-emerald-500">Done</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <div class="font-medium">Fulani</div>
+                <div class="text-slate-500 text-sm">Deadline: 1 Desember</div>
+              </td>
+              <td class="py-3 px-5 whitespace-nowrap">Explore</td>
+              <td class="py-3 px-5 whitespace-nowrap">100.000</td>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <span
+                  class="px-2 py-1 bg-yellow-200 text-yellow-600 text-xs font-medium rounded-full"
+                  >Pending</span
+                >
+              </td>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <a href="#" class="mr-5 text-indigo-500">Edit</a>
+                <button class="text-blue-500">Start</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- order list end -->
+      <!-- new order btn -->
+      <button
+        id="new-order"
+        class="bg-indigo-600 p-3 fixed bottom-5 right-5 rounded-full shrink-0 flex justify-center items-center hover:bg-indigo-800 ease-in-out transition-all"
+      >
+        <span class="material-symbols-outlined text-slate-50"> add </span>
+      </button>
+      <!-- new order btn end -->
+      <!-- close button -->
+      <button
+        id="close"
+        class="bg-indigo-600 p-3 flex fixed bottom-5 right-5 rounded-full shrink-0 justify-center items-center hover:bg-indigo-800 ease-in-out transition-all pointer-events-none opacity-0 z-20"
+      >
+        <span class="material-symbols-outlined text-slate-50"> close </span>
+      </button>
+      <!-- close button end -->
+      <!-- new order interface -->
+      <div
+        id="new-order-page"
+        class="z-10 w-full h-full bg-gray-950/75 fixed top-0 left-0 ease-in-out transition-all p-7 opacity-0 pointer-events-none"
+      >
+        <div
+          class="w-full h-full bg-slate-300 opacity-100 relative rounded-xl p-5"
+        >
+          <div class="new-order_header">
+            <header class="font-semibold text-slate-700">New Order</header>
+            <p class="text-xs text-slate-500">
+              Silahkan masukkan informasi akun.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- new order interface end -->
+      <!-- script -->
+      <script src="script.js"></script>
+      <!-- script end -->
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+      <h1 class="p-10">ini gw kasih biar bisa scroll aja sih</h1>
+    </main>
   </body>
 </html>
