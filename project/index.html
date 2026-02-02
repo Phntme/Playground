@@ -4,7 +4,7 @@
     <!-- icon -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,assignment,attach_money,check,close"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,arrow_drop_down,assignment,attach_money,check,close"
     />
     <!-- icon -->
     <link rel="stylesheet" href="../src/output.css" />
@@ -166,7 +166,7 @@
       <!-- new order btn -->
       <button
         id="new-order"
-        class="bg-indigo-600 p-3 fixed bottom-5 right-5 rounded-full shrink-0 flex justify-center items-center hover:bg-indigo-800 ease-in-out transition-all"
+        class="bg-indigo-600 p-3 fixed bottom-5 right-5 rounded-full shrink-0 flex justify-center items-center hover:bg-indigo-800 ease-in-out transition-all pointer-events-auto"
       >
         <span class="material-symbols-outlined text-slate-50"> add </span>
       </button>
@@ -174,7 +174,7 @@
       <!-- close button -->
       <button
         id="close"
-        class="bg-indigo-600 p-3 flex fixed bottom-5 right-5 rounded-full shrink-0 justify-center items-center hover:bg-indigo-800 ease-in-out transition-all pointer-events-none opacity-0 z-20"
+        class="bg-indigo-600 p-3 flex fixed top-5 right-5 rounded-full shrink-0 justify-center items-center hover:bg-indigo-800 ease-in-out transition-all duration-500 pointer-events-none opacity-0 z-20 shadow-xl"
       >
         <span class="material-symbols-outlined text-slate-50"> close </span>
       </button>
@@ -182,18 +182,85 @@
       <!-- new order interface -->
       <div
         id="new-order-page"
-        class="z-10 w-full h-full bg-gray-950/75 fixed top-0 left-0 ease-in-out transition-all p-7 opacity-0 pointer-events-none"
+        class="z-10 w-full h-full bg-gray-950/75 fixed top-0 left-0 ease-in-out transition-all duration-500 p-7 opacity-0 pointer-events-none"
       >
+        <!-- isi interface -->
         <div
           class="w-full h-full bg-slate-300 opacity-100 relative rounded-xl p-5"
         >
+          <!-- new order header -->
           <div class="new-order_header">
             <header class="font-semibold text-slate-700">New Order</header>
             <p class="text-xs text-slate-500">
               Silahkan masukkan informasi akun.
             </p>
           </div>
+          <!-- new order header end -->
+          <!-- new order input -->
+          <form action="" class="mt-3 flex flex-col">
+            <!-- klien name -->
+            <label for="klien" class="text-slate-700 font-medium text-sm"
+              >Nama Klien</label
+            >
+            <input
+              type="text"
+              name="klien"
+              id="klien"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Masukkan Nama Klien Anda..."
+              class="bg-slate-200 shadow-slate-500 shadow-xs rounded placeholder:font-medium placeholder:text-xs placeholder:opacity-60 focus:border-0 focus:outline focus:outline-slate-500 text-sm p-1 px-2 text-slate-900 mt-1"
+            />
+            <!-- klien name end -->
+            <!-- jenis paket -->
+            <div class="paket_container w-full mt-2.5 relative">
+              <h1 class="text-slate-700 font-medium text-sm">Pilih Paket</h1>
+              <!-- please select your package -->
+              <div
+                id="drop-btn"
+                class="judul_dropdown flex justify-between items-center bg-slate-200 shadow-slate-500 shadow-xs rounded py-1 px-2 mt-1 cursor-pointer z-20 relative"
+              >
+                <h1
+                  id="package-choice"
+                  class="text-slate-700 font-medium text-xs opacity-75"
+                >
+                  Pilih Paket Anda
+                </h1>
+                <span
+                  id="drop-icon"
+                  class="material-symbols-outlined transition-all duration-300 ease-in-out"
+                >
+                  arrow_drop_down
+                </span>
+              </div>
+
+              <ul
+                id="drop-list"
+                class="pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 relative opacity-0 transition-all duration-300"
+              >
+                <li
+                  class="drop-item transition-all duration-200 ease-in-out hover:bg-slate-300 py-1 px-2 rounded-md text-sm font-medium text-slate-700 cursor-pointer"
+                >
+                  Quest
+                </li>
+                <li
+                  class="drop-item transition-all duration-200 ease-in-out hover:bg-slate-300 py-1 px-2 rounded-md text-sm font-medium text-slate-700 cursor-pointer"
+                >
+                  Explore
+                </li>
+                <li
+                  class="drop-item transition-all duration-200 ease-in-out hover:bg-slate-300 py-1 px-2 rounded-md text-sm font-medium text-slate-700 cursor-pointer"
+                >
+                  Event
+                </li>
+              </ul>
+              <!-- please select your package end -->
+            </div>
+            <!-- jenis paket end -->
+          </form>
+          <!-- new order input end -->
         </div>
+        <!-- isi interface end -->
       </div>
       <!-- new order interface end -->
       <!-- script -->
