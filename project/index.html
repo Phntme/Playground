@@ -213,30 +213,26 @@
             />
             <!-- klien name end -->
             <!-- jenis paket -->
-            <div class="paket_container w-full mt-2.5 relative">
+            <div class="paket-container w-full mt-2.5 relative">
               <h1 class="text-slate-700 font-medium text-sm">Pilih Paket</h1>
               <!-- please select your package -->
               <div
-                id="drop-btn"
-                class="judul_dropdown flex justify-between items-center bg-slate-200 shadow-slate-500 shadow-xs rounded py-1 px-2 mt-1 cursor-pointer z-20 relative"
+                class="judul_dropdown package flex justify-between items-center bg-slate-200 shadow-slate-500 shadow-xs rounded py-1 px-2 mt-1 cursor-pointer z-20 relative"
               >
                 <h1
-                  id="package-choice"
-                  class="text-slate-700 font-medium text-xs opacity-75"
+                  class="selected-text text-slate-700 font-medium text-xs opacity-75"
                 >
                   Pilih Paket Anda
                 </h1>
                 <span
-                  id="drop-icon"
-                  class="material-symbols-outlined transition-all duration-300 ease-in-out"
+                  class="drop-icon material-symbols-outlined transition-all duration-300 ease-in-out"
                 >
                   arrow_drop_down
                 </span>
               </div>
-
+              <!-- package list -->
               <ul
-                id="drop-list"
-                class="pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 relative opacity-0 transition-all duration-300"
+                class="drop-list w-full pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 absolute opacity-0 transition-all duration-300"
               >
                 <li
                   class="drop-item transition-all duration-200 ease-in-out hover:bg-slate-300 p-2 rounded-md text-sm font-medium text-slate-700 cursor-pointer after:content-[' '] after:absolute after:w-11/12 after:bg-slate-300 after:bottom-px after:left-2 after:h-px relative"
@@ -254,9 +250,53 @@
                   Event
                 </li>
               </ul>
+              <!-- package list end -->
               <!-- please select your package end -->
             </div>
             <!-- jenis paket end -->
+            <!-- order status -->
+            <div class="paket-container w-full mt-2.5 relative">
+              <h1 class="text-slate-700 font-medium text-sm">Status Pesanan</h1>
+              <!-- please select order status -->
+              <div
+                class="judul_dropdown status flex justify-between items-center bg-slate-200 shadow-slate-500 shadow-xs rounded py-1 px-2 mt-1 cursor-pointer z-20 relative"
+              >
+                <h1
+                  class="selected-text text-slate-700 font-medium text-xs opacity-75"
+                >
+                  Pilih Status Pesanan Anda
+                </h1>
+                <span
+                  class="drop-icon material-symbols-outlined transition-all duration-300 ease-in-out"
+                >
+                  arrow_drop_down
+                </span>
+              </div>
+
+              <!-- order status list -->
+              <ul
+                class="drop-list pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 absolute opacity-0 transition-all duration-300"
+              >
+                <li
+                  class="px-2 py-1 bg-blue-200 text-blue-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
+                >
+                  On Progress
+                </li>
+                <li
+                  class="px-2 py-1 bg-yellow-200 text-yellow-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
+                >
+                  Pending
+                </li>
+                <li
+                  class="px-2 py-1 bg-emerald-200 text-emerald-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
+                >
+                  Pre-order
+                </li>
+              </ul>
+              <!-- order status list end -->
+              <!-- please select order status end -->
+            </div>
+            <!-- order status end -->
           </form>
           <!-- new order input end -->
         </div>

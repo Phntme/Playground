@@ -1,12 +1,12 @@
 const newOrder = document.getElementById("new-order"),
   closeBtn = document.getElementById("close"),
   newOrderPage = document.getElementById("new-order-page"),
-  package = document.getElementById("package-choice"),
-  dropBtn = document.getElementById("drop-btn"),
+  dropBtn = document.querySelectorAll(".judul_dropdown"),
   dropIcon = document.getElementById("drop-icon"),
   dropList = document.getElementById("drop-list"),
   dropItem = document.querySelectorAll(".drop-item");
 
+// ketika tombol plus di-klik, maka akan muncul window form untuk diisi informasi akun klien
 newOrder.addEventListener("click", () => {
   newOrderPage.classList.add("opacity-100");
   newOrderPage.classList.remove("pointer-events-none");
@@ -18,6 +18,7 @@ newOrder.addEventListener("click", () => {
   closeBtn.classList.add("pointer-events-auto");
 });
 
+// ketika tombol silang di-klik, maka akan menutup window form
 closeBtn.addEventListener("click", () => {
   newOrderPage.classList.remove("opacity-100");
   newOrderPage.classList.add("pointer-events-none");
@@ -29,17 +30,35 @@ closeBtn.addEventListener("click", () => {
   newOrder.classList.remove("opacity-0");
 });
 
+// development purpose(window langsung terbuka ketika page ini di-load)
 newOrder.click();
 
-dropBtn.addEventListener("click", () => {
-  dropIcon.classList.toggle("rotate-180");
-  dropList.classList.toggle("opacity-0");
-  dropList.classList.toggle("translate-y-0");
-  dropList.classList.toggle("pointer-events-none");
-});
+// untuk setiap tombol drop pada dropdown custom, ketika diklik akan memunculkan menu dropdown-nya
+dropBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    const container = btn.closest(".paket-container");
 
+    const list = container.querySelector(".drop-list");
+    const icon = container.querySelector(".drop-icon");
+    icon.classList.toggle("rotate-180");
+    list.classList.toggle("opacity-0");
+    list.classList.toggle("translate-y-0");
+    list.classList.toggle("pointer-events-none");
+    list.classList.toggle("z-50");
+  }),
+);
+
+// untuk setiap list item pada dropdown custom, ketika diklik akan mengubah value pada custom dropdown
 dropItem.forEach((item) => {
   item.addEventListener("click", () => {
-    package.textContent = item.textContent;
+    const container = item.closest(".paket-container");
+
+    const textArea = container.querySelector(".selected-text");
+
+    textArea.textContent = item.textContent;
+
+    textArea.classList.remove("opacity-75");
   });
 });
+
+// dev area
