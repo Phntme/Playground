@@ -4,7 +4,9 @@ const newOrder = document.getElementById("new-order"),
   dropBtn = document.querySelectorAll(".judul_dropdown"),
   dropIcon = document.getElementById("drop-icon"),
   dropList = document.getElementById("drop-list"),
-  dropItem = document.querySelectorAll(".drop-item");
+  dropItem = document.querySelectorAll(".drop-item"),
+  startDate = document.getElementById("start-date"),
+  deadlineDate = document.getElementById("deadline-date");
 
 // ketika tombol plus di-klik, maka akan muncul window form untuk diisi informasi akun klien
 newOrder.addEventListener("click", () => {
@@ -59,6 +61,18 @@ dropItem.forEach((item) => {
 
     textArea.classList.remove("opacity-75");
   });
+});
+
+startDate.addEventListener("change", () => {
+  if (startDate) {
+    deadlineDate.min = startDate.value;
+
+    if (deadlineDate.value && deadlineDate.value < startDate.value) {
+      deadlineDate.value = "";
+      const errMsg = `Ups, tanggal deadline harus lebih maju dari ${startDate.value} ya`;
+      alert(errMsg);
+    }
+  }
 });
 
 // dev area

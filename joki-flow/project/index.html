@@ -304,6 +304,8 @@
               >Tanggal Mulai</label
             >
             <input
+              id="start-date"
+              name="start-date"
               type="text"
               placeholder="Masukkan Tanggal Dimulainya Pesanan..."
               onfocus="this.type = 'date'"
@@ -313,12 +315,14 @@
             <!-- start date end -->
             <!-- deadline date -->
             <label
-              for="start-date"
+              for="deadline-date"
               class="text-slate-700 font-medium text-sm mt-3"
               >Tanggal Deadline</label
             >
             <input
               type="text"
+              id="deadline-date"
+              name="deadline-date"
               placeholder="Masukkan Tanggal Deadline Pesanan..."
               onfocus="this.type = 'date'"
               onblur="if (!this.value) this.type = 'text';"
