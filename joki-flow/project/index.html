@@ -278,17 +278,17 @@
                 class="drop-list pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 absolute opacity-0 transition-all duration-300"
               >
                 <li
-                  class="px-2 py-1 bg-blue-200 text-blue-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
+                  class="drop-item px-2 py-1 bg-blue-200 text-blue-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
                 >
                   On Progress
                 </li>
                 <li
-                  class="px-2 py-1 bg-yellow-200 text-yellow-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
+                  class="drop-item px-2 py-1 bg-yellow-200 text-yellow-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
                 >
                   Pending
                 </li>
                 <li
-                  class="px-2 py-1 bg-emerald-200 text-emerald-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
+                  class="drop-item px-2 py-1 bg-emerald-200 text-emerald-600 text-xs font-medium rounded-full relative hover:brightness-90 transition-all duration-200 ease-in-out mt-2"
                 >
                   Pre-order
                 </li>
@@ -297,6 +297,34 @@
               <!-- please select order status end -->
             </div>
             <!-- order status end -->
+            <!-- start date -->
+            <label
+              for="start-date"
+              class="text-slate-700 font-medium text-sm mt-3"
+              >Tanggal Mulai</label
+            >
+            <input
+              type="text"
+              placeholder="Masukkan Tanggal Dimulainya Pesanan..."
+              onfocus="this.type = 'date'"
+              onblur="if (!this.value) this.type = 'text';"
+              class="bg-slate-200 shadow-slate-500 shadow-xs rounded placeholder:font-medium placeholder:text-xs placeholder:opacity-60 focus:border-0 focus:outline focus:outline-slate-500 text-sm p-1 px-2 text-slate-900 mt-1"
+            />
+            <!-- start date end -->
+            <!-- deadline date -->
+            <label
+              for="start-date"
+              class="text-slate-700 font-medium text-sm mt-3"
+              >Tanggal Deadline</label
+            >
+            <input
+              type="text"
+              placeholder="Masukkan Tanggal Deadline Pesanan..."
+              onfocus="this.type = 'date'"
+              onblur="if (!this.value) this.type = 'text';"
+              class="bg-slate-200 shadow-slate-500 shadow-xs rounded placeholder:font-medium placeholder:text-xs placeholder:opacity-60 focus:border-0 focus:outline focus:outline-slate-500 text-sm p-1 px-2 text-slate-900 mt-1"
+            />
+            <!-- deadline date end -->
           </form>
           <!-- new order input end -->
         </div>
