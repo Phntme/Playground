@@ -197,7 +197,7 @@
           </div>
           <!-- new order header end -->
           <!-- new order input -->
-          <form action="" class="mt-3 flex flex-col">
+          <form action="" class="mt-3 flex flex-col" id="order-form">
             <!-- klien name -->
             <label for="klien" class="text-slate-700 font-medium text-sm"
               >Nama Klien</label
@@ -222,7 +222,7 @@
                 <h1
                   class="selected-text text-slate-700 font-medium text-xs opacity-75"
                 >
-                  Pilih Paket Anda
+                  <span>Pilih Paket Anda</span>
                 </h1>
                 <span
                   class="drop-icon material-symbols-outlined transition-all duration-300 ease-in-out"
@@ -230,6 +230,12 @@
                   arrow_drop_down
                 </span>
               </div>
+              <input
+                id="user-package"
+                type="text"
+                readonly
+                class="opacity-0 h-0 w-0 absolute user"
+              />
               <!-- package list -->
               <ul
                 class="drop-list w-full pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 absolute opacity-0 transition-all duration-300"
@@ -272,7 +278,12 @@
                   arrow_drop_down
                 </span>
               </div>
-
+              <input
+                id="user-status"
+                type="text"
+                readonly
+                class="opacity-0 h-0 w-0 absolute user"
+              />
               <!-- order status list -->
               <ul
                 class="drop-list pointer-events-none mt-2 rounded-md p-1 bg-slate-200 border border-slate-400 -translate-y-10 z-10 absolute opacity-0 transition-all duration-300"
@@ -329,6 +340,14 @@
               class="bg-slate-200 shadow-slate-500 shadow-xs rounded placeholder:font-medium placeholder:text-xs placeholder:opacity-60 focus:border-0 focus:outline focus:outline-slate-500 text-sm p-1 px-2 text-slate-900 mt-1"
             />
             <!-- deadline date end -->
+            <!-- submit btn -->
+            <button
+              type="submit"
+              class="p-2 bg-indigo-600 text-xs font-medium text-slate-100 rounded-md flex w-fit mt-5 hover:brightness-90 cursor-pointer ease-in-out transition-all duration-500"
+            >
+              Tambah Pesanan
+            </button>
+            <!-- submit btn end -->
           </form>
           <!-- new order input end -->
         </div>

@@ -1,12 +1,18 @@
 const newOrder = document.getElementById("new-order"),
   closeBtn = document.getElementById("close"),
   newOrderPage = document.getElementById("new-order-page"),
+  form = document.getElementById("order-form"),
+  klien = document.getElementById("klien"),
   dropBtn = document.querySelectorAll(".judul_dropdown"),
   dropIcon = document.getElementById("drop-icon"),
   dropList = document.getElementById("drop-list"),
   dropItem = document.querySelectorAll(".drop-item"),
   startDate = document.getElementById("start-date"),
   deadlineDate = document.getElementById("deadline-date");
+
+// user data
+const userPackage = document.getElementById("user-package"),
+  userStatus = document.getElementById("user-status");
 
 // ketika tombol plus di-klik, maka akan muncul window form untuk diisi informasi akun klien
 newOrder.addEventListener("click", () => {
@@ -56,13 +62,16 @@ dropItem.forEach((item) => {
     const container = item.closest(".paket-container");
 
     const textArea = container.querySelector(".selected-text");
+    const user = container.querySelector(".user");
 
     textArea.textContent = item.textContent;
+    user.value = item.textContent.trim();
 
     textArea.classList.remove("opacity-75");
   });
 });
 
+// validasi deadline agar tidak bisa lebih awal dari tanggal mulai
 startDate.addEventListener("change", () => {
   if (startDate) {
     deadlineDate.min = startDate.value;
@@ -75,4 +84,23 @@ startDate.addEventListener("change", () => {
   }
 });
 
-// dev area
+// btn submit
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = {
+    klien: klien.value,
+    package: userPackage.value,
+    status: userStatus.value,
+    start: startDate.value,
+    deadline: deadlineDate.value,
+  };
+
+  const isValid = Object.values(data).every((items) => items.trim() !== "");
+
+  if (!isValid) {
+    alert("salah satu form ada yang belum diisi");
+    return;
+  }
+  console.log(data);
+});
