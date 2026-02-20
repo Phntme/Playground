@@ -8,7 +8,10 @@ const newOrder = document.getElementById("new-order"),
   dropList = document.getElementById("drop-list"),
   dropItem = document.querySelectorAll(".drop-item"),
   startDate = document.getElementById("start-date"),
-  deadlineDate = document.getElementById("deadline-date");
+  deadlineDate = document.getElementById("deadline-date"),
+  statusPlaceholder = document.getElementById("status-placeholder"),
+  packagePlaceholder = document.getElementById("package-placeholder"),
+  table = document.getElementById("order-list");
 
 // user data
 const userPackage = document.getElementById("user-package"),
@@ -94,6 +97,7 @@ form.addEventListener("submit", (e) => {
     status: userStatus.value,
     start: startDate.value,
     deadline: deadlineDate.value,
+    price: price.value,
   };
 
   const isValid = Object.values(data).every((items) => items.trim() !== "");
@@ -103,4 +107,38 @@ form.addEventListener("submit", (e) => {
     return;
   }
   console.log(data);
+
+  // masukin ke table
+
+  const tableRow = document.createElement("tr");
+  table.appendChild(tableRow);
+  tableRow.innerHTML = `<tr>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <div class="font-medium">${data.klien}</div>
+                <div class="text-slate-500 text-sm">Deadline: ${data.deadline}</div>
+              </td>
+              <td class="py-3 px-5 whitespace-nowrap">${data.package}</td>
+              <td class="py-3 px-5 whitespace-nowrap">100.000</td>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <span
+                  class="px-2 py-1 bg-blue-200 text-blue-600 text-xs font-medium rounded-full"
+                  >${data.status}</span
+                >
+              </td>
+              <td class="py-3 px-5 whitespace-nowrap">
+                <a href="#" class="mr-5 text-indigo-500">Edit</a>
+                <button class="text-emerald-500">Done</button>
+              </td>
+            </tr>`;
+
+  // reset data
+  klien.value = "";
+  userPackage.value = "";
+  userStatus.value = "";
+  startDate.value = "";
+  deadlineDate.value = "";
+  packagePlaceholder.textContent = "Pilih Paket Anda";
+  statusPlaceholder.textContent = "Pilih Status Pesanan Anda";
+
+  closeBtn.click();
 });
