@@ -1,4 +1,15 @@
 /* basic reset */
+
+:root {
+  --black: #0f172a;
+
+  /* violet tailwind */
+  --background: oklch(97.015% 0.00011 271.152);
+  --primary: oklch(38% 0.189 293.745);
+  --secondary: oklch(28.3% 0.141 291.089);
+  --text: oklch(96.9% 0.016 293.756);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,62 +18,60 @@
   text-decoration: none;
 }
 /* reset end */
-
 body {
-  background-color: oklch(97.7% 0.014 308.299);
+  background-color: var(--background);
 }
 
 .header {
   margin: 5px;
-  /* background-color: crimson; */
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 1rem;
+}
+
+.header img {
+  max-width: 50px;
 }
 
 .header h1 {
-  color: oklch(38% 0.189 293.745);
-  font-size: 1.5rem;
+  color: var(--primary);
+  font-size: 0.8rem;
 }
 
 .header p {
-  color: oklch(28.3% 0.141 291.089);
+  color: var(--secondary);
   font-size: 0.8rem;
   font-weight: 500;
 }
 
 .container {
   gap: 5px;
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 1200px;
   width: 80%;
-  /* padding: 0.5rem; */
-  /* background-color: rgba(125, 125, 125, 0.3); */
   display: grid;
-  grid-template-areas:
-    "headline headline headline"
-    "first first second"
-    "third forth forth"
-    "third forth forth";
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  /* grid-template-rows: minmax(150px, 1fr) repeat(auto-fill, minmax(50px, 1fr)); */
-  grid-template-rows: minmax(150px, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: 10px;
+  grid-auto-flow: row dense;
+}
+
+.headline {
+  grid-column: span 2;
+  grid-row: span 10;
+  background-image: url(img/1.jpg);
+  background-position: 25% 15%;
+  background-size: cover;
 }
 
 .article {
+  padding: 0.5rem;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-}
-
-.headline {
-  padding: 0.5rem;
-  grid-area: headline;
-  background-image: url(img/1.jpg);
-  background-position: 25% 15%;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,9 +84,12 @@ body {
   -moz-transition: transform 0.1s ease-in-out;
   -ms-transition: transform 0.1s ease-in-out;
   -o-transition: transform 0.1s ease-in-out;
+
+  background-position: 25% 15%;
+  background-size: cover;
 }
 
-.headline:hover {
+.article:hover {
   transform: translateY(-0.25rem);
   -webkit-transform: translateY(-0.25rem);
   -moz-transform: translateY(-0.25rem);
@@ -85,7 +97,7 @@ body {
   -o-transform: translateY(-0.25rem);
 }
 
-.headline::before {
+.article::before {
   content: "";
   position: absolute;
   top: 0;
@@ -94,65 +106,141 @@ body {
   left: 0;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: background-color 0.1s ease-in-out;
-  -webkit-transition: background-color 0.1s ease-in-out;
-  -moz-transition: background-color 0.1s ease-in-out;
-  -ms-transition: background-color 0.1s ease-in-out;
-  -o-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -ms-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
 }
 
-.headline:hover::before {
-  background-color: rgba(0, 0, 0, 0.3);
+.article:hover::before {
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.headline * {
+.article * {
   z-index: 2;
 }
 
-.headline span {
+.category {
   width: auto;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: oklch(38% 0.189 293.745);
-  background-color: oklch(89.4% 0.057 293.283);
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: var(--text);
   padding: 0.05rem 1rem;
   border-radius: 999px;
   -webkit-border-radius: 999px;
   -moz-border-radius: 999px;
   -ms-border-radius: 999px;
   -o-border-radius: 999px;
+  transition:
+    color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+  -webkit-transition:
+    color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+  -moz-transition:
+    color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+  -ms-transition:
+    color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+  -o-transition:
+    color 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
 }
 
-.headline h1 {
+.article-title {
+  line-height: 1.2;
   font-size: 1rem;
-  color: oklch(89.4% 0.057 293.283);
+  color: var(--text);
+  transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -webkit-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -moz-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -ms-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -o-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
 }
 
-.headline p {
-  color: oklch(81.1% 0.111 293.571);
-  font-size: 0.75rem;
+.article-desc {
+  color: var(--text);
+  font-size: 0.5rem;
+  transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -webkit-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -moz-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -ms-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+  -o-transition:
+    color 0.5s ease-in-out,
+    text-shadow 0.35s ease-in-out;
+}
+
+.article:hover .article-title,
+.article:hover .article-desc {
+  text-shadow:
+    -0.75px -0.75px 0 var(--black),
+    0.75px -0.75px 0 var(--black),
+    -0.75px 0.75px 0 var(--black),
+    0.75px 0.75px 0 var(--black);
+}
+
+.article:hover .category {
+  background-color: var(--primary);
+  color: var(--text);
 }
 
 .first {
-  grid-area: first;
-  background-color: red;
-  grid-row: span 10;
+  background-image: url(img/2.jpg);
+  grid-row: span 15;
 }
 
 .second {
-  grid-area: second;
-  background-color: aqua;
-  grid-row: span 10;
+  background-image: url(img/3.jpg);
+  grid-row: span 12;
 }
 
 .third {
-  grid-area: third;
-  grid-row: span 10;
-  background-color: seagreen;
+  background-image: url(img/4.jpg);
+  grid-row: span 15;
 }
 
 .forth {
-  grid-area: forth;
-  grid-row: span 10;
-  background-color: seagreen;
+  background-image: url(img/5.jpg);
+  grid-row: span 13;
+}
+
+.fifth {
+  background-image: url(img/6.jpg);
+  grid-row: span 14;
+}
+
+.sixth {
+  background-image: url(img/7.jpg);
+  grid-row: span 12;
+}
+
+.seventh {
+  background-image: url(img/8.jpg);
+  grid-row: span 15;
+}
+
+.eight {
+  background-image: url(img/9.jpg);
+  grid-row: span 15;
 }
