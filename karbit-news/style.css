@@ -1,11 +1,12 @@
 :root {
-  --black: #0f172a;
+  --black: #030712;
 
   /* violet tailwind */
   --background: oklch(97.015% 0.00011 271.152);
   --primary: oklch(38% 0.189 293.745);
   --secondary: oklch(28.3% 0.141 291.089);
   --text: oklch(96.9% 0.016 293.756);
+  --text-second: #a855f7;
 }
 
 /* basic reset */
@@ -326,6 +327,7 @@ hr {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  box-shadow: 0 0 5px rgba(15, 23, 42, 0.5);
 }
 
 .trending-header__card {
@@ -400,7 +402,59 @@ hr {
   color: rgba(15, 23, 42, 0.5);
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--black);
+  padding: 2.5rem 1rem;
+}
+
+.footer-header h1 {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.footer-header p {
+  margin: 1rem 0;
+  color: var(--text);
+  opacity: 0.5;
+  font-size: 0.75rem;
+}
+
+.footer-header .medsos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-header .medsos a {
+  transition:
+    color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+  opacity: 0.75;
+  color: var(--text);
+  -webkit-transition:
+    color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+  -moz-transition:
+    color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+  -ms-transition:
+    color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+  -o-transition:
+    color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+}
+
+.footer-header .medsos a:hover {
+  color: var(--text-second);
+  opacity: 1;
+}
+
 .navbar {
+  max-height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -422,7 +476,8 @@ hr {
 }
 
 .profile {
-  width: 10%;
+  width: 35px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -435,17 +490,21 @@ hr {
 }
 
 .user-img {
+  object-fit: cover;
+  display: block;
+  height: auto;
   width: 100%;
+}
+
+.user-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
 }
 
 .navbar button {
   filter: brightness(0.8);
   -webkit-filter: brightness(0.8);
-  transition: filter 0.25s ease-in-out;
-  -webkit-transition: filter 0.25s ease-in-out;
-  -moz-transition: filter 0.25s ease-in-out;
-  -ms-transition: filter 0.25s ease-in-out;
-  -o-transition: filter 0.25s ease-in-out;
 }
 
 .navbar button:hover {
